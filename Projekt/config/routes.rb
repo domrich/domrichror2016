@@ -1,17 +1,8 @@
 Rails.application.routes.draw do
-  resources :galeries
-  resources :articles
+  resources :galleries
   devise_for :users
-  root 'pages#index'
 
-  get 'pages/index'
-
-  get 'article/index' => 'articles#index'
-
-  get 'pages/galerie' => 'galeries#index'
-
-  get 'pages/profile'
-
+ root to: 'galleries#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

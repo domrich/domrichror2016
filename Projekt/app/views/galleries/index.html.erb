@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<% @galleries.each do |gallery| %>
+
+    <h2><%= gallery.title %></h2>
+    <a href=" <%= gallery_url(gallery) %>"><%= image_tag(gallery.image.tiny.url) %></a>
+    <p><%= gallery.description %></p>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Show', gallery %>
+      <%= link_to 'Edit', edit_gallery_path(gallery) %>
+      <%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <hr \>
+    <% else %>
+    <% end %>
+<% end %>
+<br \>
+<% if user_signed_in? %>
+<%= link_to 'New Gallery', new_gallery_path %>
+<% else %>
+<p> Login to create your own galleries </p>
+<% end %>

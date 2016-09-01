@@ -6,6 +6,9 @@ gem 'rails', '4.2.6'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'figaro'
+gem 'unf'
 gem 'fog-aws'
 gem "letter_opener", :group => :development
 # Use SCSS for stylesheets
