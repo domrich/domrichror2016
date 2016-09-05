@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :galleries
+
+  resources :galleries do
+    resources :comments
+  end
   devise_for :users
 
  root to: 'galleries#index'

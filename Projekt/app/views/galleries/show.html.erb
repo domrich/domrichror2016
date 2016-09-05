@@ -14,6 +14,11 @@
   <strong>Description:</strong>
   <%= @gallery.description %>
 </p>
-
+<div id="comments">
+  <h2><%= @gallery.comments.count %> Kommentare</h2>
+  <%= render @gallery.comments %>
+  <h2> Schreib einen Kommentar!</h2>
+  <%= render "comments/form" %>
+</div>
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
 <%= link_to 'Back', galleries_path %>
