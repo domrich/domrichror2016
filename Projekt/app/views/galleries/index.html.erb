@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+<%= link_to 'Create a new Gallery post', new_gallery_path %>
+<% else %>
+<p> Login to create your own galleries </p>
+<% end %>
 <% @galleries.each do |gallery| %>
 
     <h2><%= gallery.title %></h2>
@@ -14,8 +19,3 @@
     <% end %>
 <% end %>
 <br \>
-<% if user_signed_in? %>
-<%= link_to 'New Gallery', new_gallery_path %>
-<% else %>
-<p> Login to create your own galleries </p>
-<% end %>

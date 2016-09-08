@@ -2,7 +2,9 @@ class GalleriesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
 
-
+  def gal
+    @galleries = Gallery.all
+  end
   # GET /galleries
   # GET /galleries.json
   def index

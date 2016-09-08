@@ -14,8 +14,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <% if user_signed_in? %>
-                <li><%= link_to "Galerie", galleries_path %></li>
-                <li></li>
+                <li><%= link_to "Gallery", galleries_path %></li>
+                <li><%= link_to "Uploads", gallery_gal_path %></li>
                 <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
               <% else %>
                 <li>

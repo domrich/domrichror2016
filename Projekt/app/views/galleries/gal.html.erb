@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+<div class="image-responsive" >
+<% @galleries.each do |gallery| %>
+    <a href=" <%= gallery_url(gallery) %>"><%= image_tag(gallery.image.tiny.url) %></a>
+<% end %>
+</div>
