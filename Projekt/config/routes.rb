@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'gallery_gal' => 'galleries#gal'
+  resources :categories
+  get 'galleries_gal' => 'galleries#gal'
+  get 'galleries_new' => 'galleries#new'
 
   resources :galleries do
     resources :comments
