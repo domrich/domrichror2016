@@ -5,7 +5,7 @@ class GalleriesController < ApplicationController
   def gal
     @galleries = Gallery.all
   end
-  
+
   # GET /galleries
   # GET /galleries.json
   def index
@@ -20,6 +20,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/new
   def new
     @gallery = Gallery.new
+    @gallery.categories = []
   end
 
   # GET /galleries/1/edit
@@ -29,7 +30,9 @@ class GalleriesController < ApplicationController
   # POST /galleries
   # POST /galleries.json
   def create
+    render plain: params.inspect;return;
     @gallery = Gallery.new(gallery_params)
+    @gallery.categories = []
 
     respond_to do |format|
       if @gallery.save
