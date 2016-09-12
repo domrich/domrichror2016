@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  belongs_to :gallery
+  has_and_belongs_to_many :gallery
 end

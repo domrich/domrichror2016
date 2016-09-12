@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
   def create
     @gallery = Gallery.find(params[:gallery_id])
-    @comment = @gallery.comments.create(params[:comment].permit(:name,:body))
+    @comment = @gallery.comments.create(params[:comment].permit(:name,:text))
 
     redirect_to gallery_path(@gallery)
   end
@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @gallery = Gallery.find(params[:gallery_id])
     @comment = @gallery.comments.find(params[:id])
     @comment.destroy
-    
+
     redirect_to gallery_path(@gallery)
   end
 end
