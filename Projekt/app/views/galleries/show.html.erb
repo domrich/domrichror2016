@@ -18,6 +18,10 @@
   <strong>Description:</strong>
   <%= @gallery.description %>
 </p>
+<p>
+  <h3>Kategorien</h3>
+  <%= @gallery.categories.map {|c| c.name}.join(', ') %>
+</p>
 <div id="comments">
   <h2><%= @gallery.comments.count %> Kommentare</h2>
   <%= render @gallery.comments %>

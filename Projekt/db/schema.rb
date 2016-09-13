@@ -24,9 +24,6 @@ ActiveRecord::Schema.define(version: 20160912100719) do
     t.integer "gallery_id"
   end
 
-  add_index "categories_galleries", ["category_id"], name: "index_categories_galleries_on_category_id"
-  add_index "categories_galleries", ["gallery_id"], name: "index_categories_galleries_on_gallery_id"
-
   create_table "comments", force: :cascade do |t|
     t.string   "name"
     t.text     "text"

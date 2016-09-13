@@ -20,19 +20,18 @@ class GalleriesController < ApplicationController
   # GET /galleries/new
   def new
     @gallery = Gallery.new
-    @gallery.categories = []
+    @categories = Category.all
   end
 
   # GET /galleries/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /galleries
   # POST /galleries.json
   def create
-    render plain: params.inspect;return;
     @gallery = Gallery.new(gallery_params)
-    @gallery.categories = []
 
     respond_to do |format|
       if @gallery.save
@@ -77,6 +76,6 @@ class GalleriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gallery_params
-      params.require(:gallery).permit(:title, :image, :description)
+      params.require(:gallery).permit(:title, :image, :description, :category_ids => [])
     end
 end

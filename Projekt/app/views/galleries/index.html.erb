@@ -9,6 +9,7 @@
     <h2><%= gallery.title %></h2>
     <a href=" <%= gallery_url(gallery) %>"><%= image_tag(gallery.image.tiny.url) %></a>
     <p><%= gallery.description %></p>
+    <p><%= gallery.categories.map {|c| c.name}.join(', ') %></p>
 
     <% if user_signed_in? %>
       <%= link_to 'Show', gallery %>
