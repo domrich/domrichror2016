@@ -7,9 +7,8 @@
 <% end %>
 <% @categories.each do |category| %>
 <p>
-  <%= category.name %>
-  <h3> Linked galleries</h3>
-  <p><%= category.galleries.map {|g| g.title}.join(', ') %></p>
+  <%= category.name %>  
+  <p>Linked galleries: <%= category.galleries.map {|g| g.title}.join(', ') %></p>
   <%= link_to 'Show', category %>
   <%= link_to 'Edit', edit_category_path(category) %>
   <%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %>
