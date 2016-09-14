@@ -8,6 +8,10 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def cat
+    @categories = Category.all
+    @galleries = Gallery.all
+  end
   # GET /categories/1
   # GET /categories/1.json
   def show

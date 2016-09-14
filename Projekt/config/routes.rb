@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :categories
   get 'galleries_gal' => 'galleries#gal'
+  get 'categories_cat' => 'categories#cat'
   get 'galleries_new' => 'galleries#new'
 
   resources :galleries do

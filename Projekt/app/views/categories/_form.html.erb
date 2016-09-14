@@ -16,6 +16,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label "Link the category with posts:" %> <br \>
     <%= collection_check_boxes(:category, :gallery_ids, @galleries, :id, :title) %>
   </div>
   <div class="actions">

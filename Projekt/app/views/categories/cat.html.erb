@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<div class="image-responsive" >
+<% @categories.each do |category| %>
+<h2> <%= category.name %> </h2>
+  <% category.galleries.map.each do |g| %>
+  <a href=" <%= gallery_url(g) %>"><%= image_tag(g.image.tiny.url) %></a>
+  <% end %>
+<% end %>
+</div>

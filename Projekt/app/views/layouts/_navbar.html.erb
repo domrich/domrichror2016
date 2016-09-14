@@ -18,19 +18,16 @@
                 <li><%= link_to "Create a category", new_category_path %></li>
                 <li><%= link_to "Categories", categories_path %></li>
                 <li><%= link_to "Uploads", galleries_gal_path %></li>
-                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-              <% else %>
-                <li>
-                    <%= link_to "Login", new_user_session_path %>
-                </li>
-                <li>
-                    <%= link_to "Register", new_user_registration_path %>
-                </li>
-              <% end %>
-
+                <li><%= link_to "Uploads by Category", categories_cat_path %></li>
+                <% end %>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-
+              <% if user_signed_in? %>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to "Login", new_user_session_path %></li>
+                <li><%= link_to "Register", new_user_registration_path %></li>
+              <% end %>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

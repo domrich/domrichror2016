@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -24,8 +23,9 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label "Kategorie auswählen" %>
-    <%= collection_check_boxes(:gallery, :category_ids, @categories, :id, :name) %>
+      <%= f.label "Choose categories" %> <br \>
+      <%= collection_check_boxes(:gallery, :category_ids, @categories, :id, :name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

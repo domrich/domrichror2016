@@ -19,13 +19,13 @@
   <%= @gallery.description %>
 </p>
 <p>
-  <h3>Kategorien</h3>
+  <h3>Linked categories</h3>
   <%= @gallery.categories.map {|c| c.name}.join(', ') %>
 </p>
 <div id="comments">
-  <h2><%= @gallery.comments.count %> Kommentare</h2>
+  <h2><%= @gallery.comments.count %> Comments</h2>
   <%= render @gallery.comments %>
-  <h2> Schreib einen Kommentar!</h2>
+  <h2> Write a Comment!</h2>
   <%= render "comments/form" %>
 </div>
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
