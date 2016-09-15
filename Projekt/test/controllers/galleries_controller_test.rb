@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class GalleriesControllerTest < ActionController::TestCase
+  include Devise::Test::ControllerHelpers
+  include Warden::Test::Helpers
+
   setup do
     @gallery = galleries(:one)
+    sign_in users(:user)
   end
 
   test "should get index" do
@@ -12,7 +16,7 @@ class GalleriesControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, gallery: @gallery.id
     assert_response :success
   end
 
@@ -25,25 +29,25 @@ class GalleriesControllerTest < ActionController::TestCase
   end
 
   test "should show gallery" do
-    get :show, id: @gallery
+    get :show, id: @gallery.id
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @gallery
+    get :edit, id: @gallery.id
     assert_response :success
   end
 
   test "should update gallery" do
-    patch :update, id: @gallery, gallery: { description: @gallery.description, image: @gallery.image, title: @gallery.title }
+    patch :update, id: @gallery.id, gallery: { description: @gallery.description, image: @gallery.image, title: @gallery.title }
     assert_redirected_to gallery_path(assigns(:gallery))
   end
 
   test "should destroy gallery" do
     assert_difference('Gallery.count', -1) do
-      delete :destroy, id: @gallery
+      delete :destroy, id: @gallery.id
     end
 
     assert_redirected_to galleries_path
   end
-end
+ end

@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  body: MyText
-  gallery_id: 
+  text: MyText
+  gallery_id:
 
 two:
   name: MyString
-  body: MyText
-  gallery_id: 
+  text: MyText
+  gallery_id:
