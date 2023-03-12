@@ -14,6 +14,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     services:
+      ruby: 2.7.2
       postgres:
         image: postgres:11-alpine
         ports:
